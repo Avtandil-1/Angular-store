@@ -9,6 +9,22 @@
     <span>{{item.price | currency}}</span>
 </div>
 
-<button routerLink="/">
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">
+            Name
+        </label>    
+        <input id="name" type="text" formControlName="name">    
+    </div>
+    <div>
+        <label for="Address">
+            Address
+        </label>
+        <input id="Address" type="text" formControlAddress="address">
+    </div>
+    <button class="button" type="submit">Purchase</button>
+</form>
+
+<button id="butt" routerLink="/">
     Go back
 </button>
